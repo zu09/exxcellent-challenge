@@ -12,6 +12,8 @@ public class Calculator {
         T min = null;
         int minDiff = Integer.MAX_VALUE;
 
+        assert !list.isEmpty() : "Couldn't find min. absolute difference: List is empty";
+
         for(T data: list){
             int diff = data.absoulteDifference();
             if(diff < minDiff){

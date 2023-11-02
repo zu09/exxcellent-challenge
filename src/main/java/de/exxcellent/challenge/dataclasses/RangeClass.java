@@ -6,11 +6,11 @@ package de.exxcellent.challenge.dataclasses;
 
 public interface RangeClass {
 
-    public int bound1();
+    int bound1();
 
-    public int bound2();
+    int bound2();
 
-    public default int absoulteDifference(){
+    default int absoulteDifference(){
         int diff = this.bound1() - this.bound2() ;
         //Remove sign if needed
         if(diff < 0) diff = - diff;
