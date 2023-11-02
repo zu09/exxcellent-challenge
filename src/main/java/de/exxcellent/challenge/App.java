@@ -22,15 +22,18 @@ public final class App {
     public static void main(String... args) {
 
         // Your preparation code …
-        List<WeatherData> weatherDataList = Input.readWeatherData("src/main/resources/de/exxcellent/challenge/weather.csv");
+        List<WeatherData> weatherDataList = Input.readWeatherData(WeatherData.class, "src/main/resources/de/exxcellent/challenge/weather.csv");
+        List<FootballData> footballDataList = Input.readWeatherData(FootballData.class,"src/main/resources/de/exxcellent/challenge/football.csv");
 
         assert weatherDataList != null;
-        WeatherData min = Calculator.getAbsoulteDifference(weatherDataList);
+        WeatherData weather = Calculator.getAbsoulteDifference(weatherDataList);
+        assert footballDataList != null;
+        FootballData football = Calculator.getAbsoulteDifference(footballDataList);
 
-        String dayWithSmallestTempSpread = Integer.toString(min.getDay());     // Your day analysis function call …
+        String dayWithSmallestTempSpread = Integer.toString(weather.getDay());     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
+        String teamWithSmallestGoalSpread = football.getTeam(); // Your goal analysis function call …
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
     }
 }

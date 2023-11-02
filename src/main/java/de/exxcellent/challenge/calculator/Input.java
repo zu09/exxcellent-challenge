@@ -10,14 +10,14 @@ import java.util.List;
 public class Input {
 
     // Reads CSV file from input path and maps the row to the WeatherData data class.
-    public static List<WeatherData> readWeatherData(String path){
+    public static <T extends RangeObject> List<T> readWeatherData(Class<T> type, String path){
         try {
-                List<WeatherData> beans = new CsvToBeanBuilder<WeatherData>(new FileReader(path))
-                    .withType(WeatherData.class)
+                List<T> beans = new CsvToBeanBuilder<T>(new FileReader(path))
+                    .withType(type)
                     .build().parse();
 
                 if(beans != null){
-                    for(WeatherData data : beans){
+                    for(RangeObject data : beans){
                         System.out.println(data);
                     }
                 }
