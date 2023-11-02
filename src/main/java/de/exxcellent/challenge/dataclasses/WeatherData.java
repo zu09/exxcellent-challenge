@@ -1,9 +1,8 @@
 package de.exxcellent.challenge.dataclasses;
 
 import com.opencsv.bean.CsvBindByName;
-import com.opencsv.bean.CsvBindByPosition;
-import de.exxcellent.challenge.calculator.RangeObject;
 
+//Data class for the weather.csv file. The two bounds are MnT and MxT.
 public class WeatherData implements RangeObject {
     @CsvBindByName(column = "Day")
     private int day;

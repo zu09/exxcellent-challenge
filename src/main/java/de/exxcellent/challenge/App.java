@@ -21,14 +21,13 @@ public final class App {
      */
     public static void main(String... args) {
 
-        // Your preparation code …
-        List<WeatherData> weatherDataList = Input.readWeatherData(WeatherData.class, "src/main/resources/de/exxcellent/challenge/weather.csv");
-        List<FootballData> footballDataList = Input.readWeatherData(FootballData.class,"src/main/resources/de/exxcellent/challenge/football.csv");
+        List<WeatherData> weatherDataList = Input.csvToRangeObject(WeatherData.class, "src/main/resources/de/exxcellent/challenge/weather.csv");
+        List<FootballData> footballDataList = Input.csvToRangeObject(FootballData.class,"src/main/resources/de/exxcellent/challenge/football.csv");
 
         assert weatherDataList != null;
-        WeatherData weather = Calculator.getAbsoulteDifference(weatherDataList);
+        WeatherData weather = Calculator.minAbsoluteDifference(weatherDataList);
         assert footballDataList != null;
-        FootballData football = Calculator.getAbsoulteDifference(footballDataList);
+        FootballData football = Calculator.minAbsoluteDifference(footballDataList);
 
         String dayWithSmallestTempSpread = Integer.toString(weather.getDay());     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
