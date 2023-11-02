@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
+
+//The Input class contains data gathering methods that map the data to data classes.
 public class Input {
 
     // Reads CSV file from input path and maps the row to a RangeObject data class which type is passed as an input parameter.
@@ -25,7 +27,7 @@ public class Input {
                 return beans;
         }
         catch (IOException e) {
-           e.printStackTrace();
+           System.out.printf("There was a problem with reading the file in path: %s%n", path);
         }
         return null;
     }

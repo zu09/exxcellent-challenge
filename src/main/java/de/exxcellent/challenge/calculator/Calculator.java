@@ -4,6 +4,7 @@ import de.exxcellent.challenge.dataclasses.RangeObject;
 
 import java.util.List;
 
+//The Calculator class contains mathematical methods for RangeObjects
 public class Calculator {
 
     //Searches for the smallest absolute difference in a list of RangeObjects and returns it

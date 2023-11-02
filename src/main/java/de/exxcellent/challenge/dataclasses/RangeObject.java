@@ -12,6 +12,7 @@ public interface RangeObject {
 
     public default int absoulteDifference(){
         int diff = this.bound1() - this.bound2() ;
+        //Remove sign if needed
         if(diff < 0) diff = - diff;
         return diff;
     }

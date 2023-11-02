@@ -24,9 +24,10 @@ public final class App {
         List<WeatherData> weatherDataList = Input.csvToRangeObject(WeatherData.class, "src/main/resources/de/exxcellent/challenge/weather.csv");
         List<FootballData> footballDataList = Input.csvToRangeObject(FootballData.class,"src/main/resources/de/exxcellent/challenge/football.csv");
 
-        assert weatherDataList != null;
+        assert weatherDataList != null : "Data class creation of .csv file failed. WeatherDataList is null";
+        assert footballDataList != null : "Data class creation of .csv file failed. FootballDataList is null";
+
         WeatherData weather = Calculator.minAbsoluteDifference(weatherDataList);
-        assert footballDataList != null;
         FootballData football = Calculator.minAbsoluteDifference(footballDataList);
 
         String dayWithSmallestTempSpread = Integer.toString(weather.getDay());     // Your day analysis function call …
