@@ -1,6 +1,9 @@
 package de.exxcellent.challenge;
 
-import java.io.FileNotFoundException;
+import de.exxcellent.challenge.calculator.Calculator;
+import de.exxcellent.challenge.calculator.Input;
+import de.exxcellent.challenge.calculator.WeatherData;
+
 import java.util.List;
 
 /**
@@ -20,7 +23,7 @@ public final class App {
         // Your preparation code …
         List<WeatherData> weatherDataList = Input.readWeatherData("src/main/resources/de/exxcellent/challenge/weather.csv");
         assert weatherDataList != null;
-        WeatherData min = Calculator.getMinTempSpread(weatherDataList);
+        WeatherData min = Calculator.getAbsoulteDifference(weatherDataList);
 
         String dayWithSmallestTempSpread = Integer.toString(min.getDay());     // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);

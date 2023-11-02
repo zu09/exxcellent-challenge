@@ -1,14 +1,9 @@
-package de.exxcellent.challenge;
+package de.exxcellent.challenge.calculator;
 
-import com.opencsv.CSVReader;
-import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
-import com.opencsv.exceptions.CsvException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 public class Input {

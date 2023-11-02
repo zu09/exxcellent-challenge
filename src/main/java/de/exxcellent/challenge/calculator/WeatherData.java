@@ -1,8 +1,8 @@
-package de.exxcellent.challenge;
+package de.exxcellent.challenge.calculator;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
-public class WeatherData {
+public class WeatherData implements RangeObject {
     @CsvBindByName(column = "Day")
     private int day;
     @CsvBindByName(column = "MxT")
@@ -162,5 +162,15 @@ public class WeatherData {
                 ", Mn=" + mn +
                 ", R AvSLP=" + rAvSLP +
                 '}';
+    }
+
+    @Override
+    public int bound1() {
+        return this.mnT;
+    }
+
+    @Override
+    public int bound2() {
+        return this.mxT;
     }
 }
