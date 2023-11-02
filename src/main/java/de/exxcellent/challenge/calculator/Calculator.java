@@ -1,14 +1,14 @@
 package de.exxcellent.challenge.calculator;
 
-import de.exxcellent.challenge.dataclasses.RangeObject;
+import de.exxcellent.challenge.dataclasses.RangeClass;
 
 import java.util.List;
 
-//The Calculator class contains mathematical methods for RangeObjects
+//The Calculator class contains mathematical methods for RangeClass
 public class Calculator {
 
-    //Searches for the smallest absolute difference in a list of RangeObjects and returns it
-    public static <T extends RangeObject> T minAbsoluteDifference(List<T> list){
+    //Searches for the smallest absolute difference in a list of RangeClass and returns it
+    public static <T extends RangeClass> T minAbsoluteDifference(List<T> list){
         T min = null;
         int minDiff = Integer.MAX_VALUE;
 

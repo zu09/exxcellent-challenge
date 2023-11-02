@@ -3,7 +3,7 @@ package de.exxcellent.challenge.dataclasses;
 import com.opencsv.bean.CsvBindByName;
 
 //Data class for the weather.csv file. The two bounds are MnT and MxT.
-public class WeatherData implements RangeObject {
+public class WeatherData implements RangeClass {
     @CsvBindByName(column = "Day")
     private int day;
     @CsvBindByName(column = "MxT")

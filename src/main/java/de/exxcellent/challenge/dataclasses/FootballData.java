@@ -3,7 +3,7 @@ package de.exxcellent.challenge.dataclasses;
 import com.opencsv.bean.CsvBindByName;
 
 // Data class of the football.csv file. The two bounds are goals and goalsAllowed.
-public class FootballData implements RangeObject {
+public class FootballData implements RangeClass {
     @CsvBindByName(column = "Team")
     private String team;
     @CsvBindByName(column = "Games")

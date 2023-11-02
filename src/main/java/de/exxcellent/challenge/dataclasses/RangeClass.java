@@ -4,7 +4,7 @@ package de.exxcellent.challenge.dataclasses;
 // Get the absolute "range" between two bounds.
 // This works for the temperature spread and the absolute goal difference.
 
-public interface RangeObject {
+public interface RangeClass {
 
     public int bound1();
 
