@@ -13,6 +13,7 @@ import java.util.List;
 
 public class Input {
 
+    // Reads CSV file from input path and maps the row to the WeatherData data class.
     public static List<WeatherData> readWeatherData(String path){
         try {
                 List<WeatherData> beans = new CsvToBeanBuilder<WeatherData>(new FileReader(path))
