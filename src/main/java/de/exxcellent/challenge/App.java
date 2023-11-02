@@ -2,7 +2,8 @@ package de.exxcellent.challenge;
 
 import de.exxcellent.challenge.calculator.Calculator;
 import de.exxcellent.challenge.calculator.Input;
-import de.exxcellent.challenge.calculator.WeatherData;
+import de.exxcellent.challenge.dataclasses.FootballData;
+import de.exxcellent.challenge.dataclasses.WeatherData;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public final class App {
 
         // Your preparation code …
         List<WeatherData> weatherDataList = Input.readWeatherData("src/main/resources/de/exxcellent/challenge/weather.csv");
+
         assert weatherDataList != null;
         WeatherData min = Calculator.getAbsoulteDifference(weatherDataList);
 

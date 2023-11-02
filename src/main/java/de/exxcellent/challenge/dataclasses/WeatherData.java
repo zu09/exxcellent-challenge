@@ -1,7 +1,9 @@
-package de.exxcellent.challenge.calculator;
+package de.exxcellent.challenge.dataclasses;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
+import de.exxcellent.challenge.calculator.RangeObject;
+
 public class WeatherData implements RangeObject {
     @CsvBindByName(column = "Day")
     private int day;

@@ -1,6 +1,7 @@
 package de.exxcellent.challenge.calculator;
 
 import com.opencsv.bean.CsvToBeanBuilder;
+import de.exxcellent.challenge.dataclasses.WeatherData;
 
 import java.io.FileReader;
 import java.io.IOException;
