@@ -18,12 +18,6 @@ public class Input {
                     .withType(type)
                     .build().parse();
 
-                if(beans != null){
-                    for(RangeClass data : beans){
-                        System.out.println(data);
-                    }
-                }
-
                 return beans;
         }
         catch (IOException e) {
