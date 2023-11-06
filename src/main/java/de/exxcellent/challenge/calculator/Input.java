@@ -3,8 +3,9 @@ package de.exxcellent.challenge.calculator;
 import com.opencsv.bean.CsvToBeanBuilder;
 import de.exxcellent.challenge.dataclasses.RangeClass;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -12,7 +13,7 @@ import java.util.List;
 public class Input {
 
     // Reads CSV file from input path and maps the row to a RangeClass data class which type is passed as an input parameter.
-    public static <T extends RangeClass> List<T> csvToRangeClass(Class<T> type, String path){
+    public static <T extends RangeClass> List<T> csvToRangeClass(Class<T> type, String path) {
         try {
                 List<T> beans = new CsvToBeanBuilder<T>(new FileReader(path))
                     .withType(type)
@@ -20,10 +21,13 @@ public class Input {
 
                 return beans;
         }
-        catch (IOException e) {
+        catch (FileNotFoundException e) {
            System.out.printf("There was a problem with reading the file in path: %s%n", path);
         }
-        return null;
+        catch (IllegalStateException e){
+            System.out.printf("There was a problem with parsing the file in path: %s%n", path);
+        }
+        return Collections.emptyList();
     }
 
 

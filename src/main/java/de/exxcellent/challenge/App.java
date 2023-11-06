@@ -11,7 +11,7 @@ import java.util.List;
  * The entry class for your solution. This class is only aimed as starting point and not intended as baseline for your software
  * design. Read: create your own classes and packages as appropriate.
  *
- * @author Benjamin Schmid <benjamin.schmid@exxcellent.de>
+ * @author Felix Wollinsky <felix-wollinsky@gmx.de>
  */
 public final class App {
 
@@ -24,13 +24,10 @@ public final class App {
         List<WeatherData> weatherDataList = Input.csvToRangeClass(WeatherData.class, "src/main/resources/de/exxcellent/challenge/weather.csv");
         List<FootballData> footballDataList = Input.csvToRangeClass(FootballData.class,"src/main/resources/de/exxcellent/challenge/football.csv");
 
-        assert weatherDataList != null : "Data class creation of .csv file failed. WeatherDataList is null";
-        assert footballDataList != null : "Data class creation of .csv file failed. FootballDataList is null";
-
         WeatherData weather = Calculator.minAbsoluteDifference(weatherDataList);
         FootballData football = Calculator.minAbsoluteDifference(footballDataList);
 
-        String dayWithSmallestTempSpread = Integer.toString(weather.getDay());     // Your day analysis function call …
+        String dayWithSmallestTempSpread = Integer.toString(weather.getDay());
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
         String teamWithSmallestGoalSpread = football.getTeam(); // Your goal analysis function call …
