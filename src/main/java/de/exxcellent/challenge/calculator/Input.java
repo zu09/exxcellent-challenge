@@ -9,12 +9,21 @@ import java.util.Collections;
 import java.util.List;
 
 
-//The Input class contains data gathering methods that map the data to data classes.
+
+/**
+ * The Input class contains static methods for parsing data into RangeObject data classes.
+ */
 public class Input {
 
-    // Reads CSV file from input path and maps the row to a RangeClass data class which type is passed as an input parameter.
+    /**
+     * Reads CSV file from input path and maps the row to a RangeClass data class which type is passed as an input parameter.
+     * @param type The class type of RangeClass needs to be passed as a parameter
+     * @param path The path the CSV file is stored in
+     * @return Returns a listed with range Objects or an empty list
+     */
     public static <T extends RangeClass> List<T> csvToRangeClass(Class<T> type, String path) {
         try {
+            //Method is not split in CSV reader and parser bc. it's only one command
                 List<T> beans = new CsvToBeanBuilder<T>(new FileReader(path))
                     .withType(type)
                     .build().parse();

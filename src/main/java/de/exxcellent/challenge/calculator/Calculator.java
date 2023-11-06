@@ -4,10 +4,17 @@ import de.exxcellent.challenge.dataclasses.RangeClass;
 
 import java.util.List;
 
-//The Calculator class contains mathematical methods for RangeClass
+/**
+ * The Calculator class contains mathematical methods for RangeClass.
+ */
 public class Calculator {
 
-    //Searches for the smallest absolute difference in a list of RangeClass and returns it
+    /**
+     * Searches for the smallest absolute difference in a list of RangeClasses objects and returns it.
+     * @param list The list in which the smallest absolute range should be searched for.
+     * @return Returns the RangeClass object with the smallest absolute range.
+     * @param <T> Type of RangeClass implementation.
+     */
     public static <T extends RangeClass> T minAbsoluteDifference(List<T> list){
         T min = null;
         int minDiff = Integer.MAX_VALUE;

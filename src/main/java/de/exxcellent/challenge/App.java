@@ -8,16 +8,14 @@ import de.exxcellent.challenge.dataclasses.WeatherData;
 import java.util.List;
 
 /**
- * The entry class for your solution. This class is only aimed as starting point and not intended as baseline for your software
- * design. Read: create your own classes and packages as appropriate.
+ * My solution for the eXXcellent programming challenge!
  *
  * @author Felix Wollinsky <felix-wollinsky@gmx.de>
  */
 public final class App {
 
     /**
-     * This is the main entry method of your program.
-     * @param args The CLI arguments passed
+     * The main method reads the two .csv files and searches for the smallest temperature spread and smallest goal spread.
      */
     public static void main(String... args) {
 
